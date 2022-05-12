@@ -1,0 +1,36 @@
+{% extends 'skin.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="card {{ dshboard.card }}">
+        <div class="card-header">
+            <h3 class="card-title">
+                <i class="fas fa-exclamation-triangle"></i>
+                {{ title }}
+                AVISO
+            </h3>
+        </div>
+        <div class="card-body" style="display: block;">
+            <div class="container-fluid">
+                <h2> Registro envíado con éxito </h2>
+            </div>
+        </div>
+        <!--Block box footer-->
+        {% block box_footer %}
+            <div class="card-footer">
+                <!--Block box footer buttons-->
+                {% block box_footer_buttons %}
+                    <a href="{% url 'encuesta_add' %}" class="btn btn-warning btn-flat">
+                        <i class="fas fa-plus"></i> Nuevo Registro
+                    </a>
+                  
+                {% endblock %}
+            </div>
+        {% endblock %}
+        <!--Block box footer after-->
+        {% block box_footer_after %}{% endblock %}
+    </div>
+
+{% endblock %}
+
